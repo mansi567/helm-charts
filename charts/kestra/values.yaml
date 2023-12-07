@@ -139,17 +139,17 @@ elasticsearch:
 
 
 ### Minio
-minio:
-  enabled: false
-  rootUser: please-change-me
-  rootPassword: its-not-a-secret
-  mode: standalone
-  persistence:
-    size: 8Gi
-  buckets:
-    - name: kestra
-      policy: none
-      purge: false
+#minio:
+ # enabled: false
+  #rootUser: please-change-me
+  #rootPassword: its-not-a-secret
+  #mode: standalone
+  #persistence:
+   # size: 8Gi
+  #buckets:
+   # - name: kestra
+    #  policy: none
+     # purge: false
 
 ### GCS
 gcs:
