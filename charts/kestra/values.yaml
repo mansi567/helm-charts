@@ -100,7 +100,7 @@ workerGroup:
 # for io.kestra.core.tasks.scripts.Bash task or io.kestra.plugin.scripts.*, attach a docker dind container in order to isolate in a container
 # every command launch
 dind:
-  enabled: false
+  enabled: true
   image:
     image: docker
     tag: dind-rootless
@@ -140,7 +140,7 @@ elasticsearch:
 
 ### Minio
 minio:
-  enabled: true
+  enabled: false
   rootUser: please-change-me
   rootPassword: its-not-a-secret
   mode: standalone
@@ -151,6 +151,41 @@ minio:
       policy: none
       purge: false
 
+### GCS
+gcs:
+  enabled: true
+  bucket: "kestra_bckt"
+  service-account: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDTDhZ6cbFMrruq
+    PuNN55byAt8Bt+EJTwAMPzdiRKYJGb+FA2xS9H4u2XAKNI4xSeNLTt7ubEQPPaSh
+    7DYNo7GwzI9DIXuKnKzF0zIedO/MrIDrSCo3DAJfQV/MjH7E0NDaeFE4wNa8+H/u
+    TS85JDF6HyLLjx9PBcPN+NgHEW5rPdUsDJSGK3KtVy1mgPW9EI8ZjuwYoDBVf9Kf
+    7fOHdU5OouobjcOyjp3Lyp5Oq33C4rdfK42xZkopPlizyHAnx3nNhVctOKnjeyCU
+    so3lyvvy/fox43v3VUA/ZvkR8F8OmV90mxyhED20yWNC5BNqglY79OajDWGgL1Go
+    OnWiofYtAgMBAAECggEAD11QL5vFP4Lc8JjhbVN1vqqM15AuVsIki7+yZXn/6Fuy
+    gJluMl/QK9LygBuxWk85t8rHGe5RyhY/vPX4PWf0UJ2jtExktQOQ5FnqpSL4LhtE
+    y1wWjqlWJt8YfUihFezpt23Y49vOBjXFAnEmBe/nli9cFhuWOOd/iKgb+e+/7RiS
+    afOeld4Zsh2BcN9kD47slNwIWQf4mWEw4yd3yOTwNEX1n+IZ4D487626u/zWPOku
+    stJz4wFTyxJ+kIzmWOh0UrwJjRBMlIPBqSUWsIbyfs3KShH6eww2I4f3c0xLwoUr
+    wPdDbwLvXUlGmxRmGutOMnoYyoKrnBsaTDBwk/PWNQKBgQDsjGXw1otdshl27WjA
+    aRTi1AUzetR7tXe+GNFr0Df4PYmvwNGtgOjW+ZLXxWvinrhPZ/o95NDzJEgJp386
+    4LEu5IMrx4PdbqFEOmLyRfP2qitiXrQS9lqmSXvi98wpG/ZS11JpCiGjJjlloXS1
+    qajGbO+Q/sPt1BsTVfkKOW0M9wKBgQDkaQaal38NZ3UcdKZngCTf2R3pfrX+fiGb
+    WcB1BgYQTPi3i70efgy8XMeONf6409FbCK1GtNrxzMRtQTiUbDqNfTDxjI/0frS4
+    aFQ7OPG9qj/VsxVpDlssyAkU9gsmSifxuYHFjNMcZW0sPWrLoHjrF38RrcJxjjo2
+    GJZ6rqvA+wKBgBvMrDZPoHVUdvWpFQR31QKLVEkmiE45l2b517LJ96nu4X2MNZgk
+    bDjHf+BnzTQG3zZFy/z2JTBN9UFdM/Chc3FFXb0JZ4/gbodsLTC30+ILQan/4z3P
+    QfwE6tBTuuSh6qL1tzOtAyL/XQN6pBKta65WIxlxN2l94ei109zFvvElAoGBANR7
+    m6gevRQUJY8mOVNZk3Qmf7wio12vqsXhVbfHtcZeRJZDSdje/CwSx5XVRzRb4Ium
+    Y8O+JVwB2M2meeMhV8seJnTfBWA2qxpN++XoEIMXqTC823MS5uCe6kv0o+Sn4cbu
+    gvnrCs2E0W3xaLMrgrF49z3T/mozHJYMg5h3e9IXAoGAet67Q7bSTmoSfxtgCNWe
+    bap5KBRS6GQozVAT3fyXLe/CUMTIbihixjNwTo0tit12UH2peqsPFke+uJJiXheq
+    gCVKGeoZboieCfd/cKGiyCjN6IK5Q+pnfmuUrt6ycOlZE4rzO5pMnj8aYOvGMyk3
+    KZShm8uXJTQcLGjR+0/TVLI=
+    -----END PRIVATE KEY-----
+
+  project-id: "kestra-deployment"
 
 ### Postgresql
 postgresql:
