@@ -196,7 +196,7 @@ service:
 ### Ingress
 ingress:
   enabled: true
-  className: "gce"
+  className: gce
   annotations: {}
     # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
