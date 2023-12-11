@@ -188,7 +188,7 @@ postgresql:
 
 ### Service
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8080
   annotations: {}
 
